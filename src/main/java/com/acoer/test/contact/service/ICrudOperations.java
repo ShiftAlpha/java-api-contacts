@@ -6,6 +6,7 @@ public interface ICrudOperations<T> {
 
 	/**
 	 * Returns all the items
+	 * *
 	 * 
 	 * @return
 	 */
