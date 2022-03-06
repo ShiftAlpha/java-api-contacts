@@ -1,6 +1,9 @@
 package com.acoer.test.contact.service;
 
 import java.util.List;
+import java.util.Optional;
+
+import com.acoer.test.contact.domain.Contact;
 
 public interface ICrudOperations<T> {
 
@@ -9,8 +12,9 @@ public interface ICrudOperations<T> {
 	 * *
 	 * 
 	 * @return
+	 * @throws Exception
 	 */
-	public List<T> getAll();
+	public List<T> getAll() throws Exception;
 
 	/**
 	 * Returns items matching the searchTerm
@@ -18,7 +22,7 @@ public interface ICrudOperations<T> {
 	 * @param searchTerm
 	 * @return
 	 */
-	public List<T> search(String searchTerm);
+	public Optional<Contact> search(String searchTerm) throws Exception;
 
 	/**
 	 * Adds a new item to the DB
@@ -26,7 +30,7 @@ public interface ICrudOperations<T> {
 	 * @param item
 	 * @return
 	 */
-	public T add(T item);
+	public T add(T item) throws Exception;
 
 	/**
 	 * Updates an existing item to the DB
@@ -34,12 +38,12 @@ public interface ICrudOperations<T> {
 	 * @param item
 	 * @return
 	 */
-	public T update(T item);
+	public T update(T item) throws Exception;
 
 	/**
 	 * Removes an item from the DB
 	 * 
 	 * @param item
 	 */
-	public void delete(T item);
+	public void delete(T item) throws Exception;
 }
