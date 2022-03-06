@@ -3,12 +3,19 @@ package com.acoer.test.contact.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Document(collection = "contacts")
 public class Contact {
 
 	@Id
+	@ApiModelProperty(notes = "The contacts first name")
 	private String fName;
+	
+	@ApiModelProperty(notes = "The contacts surname")
 	private String sName;
+	
+	@ApiModelProperty(notes = "The contacts Phone Number")
 	private int phoneNum;
 
 	public Contact(){
