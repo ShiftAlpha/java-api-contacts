@@ -1,8 +1,10 @@
 package com.acoer.test.contact.domain;
 
+//imports
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+//Database Sequence Class
 @Document(collection = "database_sequences")
 public class DbSequence {
 
@@ -21,11 +23,11 @@ public class DbSequence {
         this.id = id;
     }
 
-    public long getSeq() {
+    public long getSequence() {
         return seq;
     }
 
-    public void setSeq(long seq) {
+    public void setSequence(long seq) {
         this.seq = seq;
     }
     

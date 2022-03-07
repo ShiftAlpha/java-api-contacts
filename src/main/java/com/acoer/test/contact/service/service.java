@@ -3,9 +3,9 @@ package com.acoer.test.contact.service;
 import com.acoer.test.contact.domain.Contact;
 
 
-
+//additional Service class
 public interface service {
-    Iterable <Contact> listAllProducts();
+    Iterable <Contact> listAllContacts();
 
     Contact getContact(String contact);
 
