@@ -6,15 +6,18 @@ import static org.springframework.data.mongodb.core.query.Query.query;
 
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.acoer.test.contact.domain.Contact;
+import com.acoer.test.contact.domain.DbSequence;
 // import com.acoer.test.contact.repo.contactRepo;
 import com.acoer.test.contact.repo.contactRepository;
 
@@ -28,6 +31,15 @@ public class ContactService implements ICrudOperations<Contact> {
 	@Autowired
 	private MongoOperations mongoOps;
 
+	public long generateSequence(String seqName) {
+
+        DbSequence counter = mongoOps.findAndModify(query(where("phonenumber").is(seqName)),
+                new Update().inc("seq",1), options().returnNew(true).upsert(true),
+                DbSequence.class);
+        return !Objects.isNull(counter) ? counter.getSeq() : 1;
+
+    }
+
 	@Autowired
     public ContactService(MongoOperations mongoOps) {
         this.mongoOps = mongoOps;
@@ -35,12 +47,21 @@ public class ContactService implements ICrudOperations<Contact> {
 
 	@Override
 	public List<Contact> getAll() throws Exception{
+
+		logger.debug("getAll called");
+		
 		return ((ContactService) cRepository).getAll();
 	}
 
 	@Override
-	public Optional<Contact> search(String searchTerm) throws Exception{
+	public  Optional<Contact> search(String searchTerm) throws Exception{
 
+		logger.debug("search called");
+
+		//utilizes mongoOps
+		// return mongoOps.findById(null, null, searchTerm);
+
+		// utilizes crepository instance instead of mongoOps
 		return cRepository.findById(searchTerm);
 
 	}
@@ -48,11 +69,20 @@ public class ContactService implements ICrudOperations<Contact> {
 	@Override
 	public Contact add(Contact itemContact) throws Exception{
 
-		return cRepository.save(itemContact);
+		logger.debug("add called");
+
+		return mongoOps.save(itemContact);
+
+		//utilizes cRepository instance instead of mongoOps
+		//return cRepository.save(itemContact);
+
+		
 	}
 
 	@Override
 	public Contact update(Contact newNumber) throws Exception{
+
+		logger.debug("update called");
 		
 		// if(newNumber == null) new com.acoer.test.contact.controller.IllegalArgumentException("");
 
@@ -73,6 +103,9 @@ public class ContactService implements ICrudOperations<Contact> {
 
 	@Override
 	public void delete(Contact item) throws Exception {
+
+		logger.debug("delete called");
+
 		if(item == null){
 			throw new Exception("Cannot Delete item");
 		} else {
