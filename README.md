@@ -1,7 +1,7 @@
 # Dhirav Rana Acoer Take-Home Test
 
 - # Tools Used
-    - VS Code with java, lombok, & mongo extensions
+    - VS Code with java, lombok, & springboot mongo extensions
     - Github
 
 - # Core App
