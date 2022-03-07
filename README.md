@@ -14,7 +14,7 @@
     - Search via search term(number , first name, surname), otherwise ResourceNotFound Exception to be thrown
 
 - # Additional Files & code commented & committed
-- # What i would've completed should there any requests be made : 
+- # What i would've completed should there be any requests made : 
     Security protocols; WebConfig, SexcurityXML, java security config, Spring Security, Further Error Handling
     , Bug fixes, Further tests
 
