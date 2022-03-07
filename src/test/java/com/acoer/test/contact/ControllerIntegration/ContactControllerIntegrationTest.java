@@ -3,7 +3,7 @@ package com.acoer.test.contact.ControllerIntegration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import javax.annotation.security.RunAs;
+// import javax.annotation.security.RunAs;
 
 import com.acoer.test.contact.Application;
 import com.acoer.test.contact.domain.Contact;

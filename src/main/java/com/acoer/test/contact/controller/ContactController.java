@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletionException;
 
-import javax.management.relation.RelationNotFoundException;
+// import javax.management.relation.RelationNotFoundException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.acoer.test.contact.domain.Contact;
-import com.acoer.test.contact.repo.contactRepository;
+// import com.acoer.test.contact.repo.contactRepository;
 import com.acoer.test.contact.service.ContactService;
 
 import io.swagger.annotations.Api;
@@ -44,7 +44,7 @@ public class ContactController {
 	private ContactService contactService;
 
 	@Autowired
-	private contactRepository cRepository;
+	// private contactRepository cRepository;
 
 	public void setContactService(ContactService contactService) {
 		this.contactService = contactService;
