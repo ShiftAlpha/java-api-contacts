@@ -1,3 +1,23 @@
+# Dhirav Rana Acoer Take-Home Test
+
+- # Tools Used
+    - VS Code with java, lombok, & mongo extensions
+    - Github
+
+- # Core App
+    - Contacts storing app
+    - Contact attributes are to be First Name, Surname, & phonenumber
+    - Phonenumber should be used to delete entire contact as well as compared to when storing new contacts
+    - Ascending & Descending sort to be used via Names
+    - Delimeter or .split() method Java to manipulate and sort contact via Surname
+    - Completed everything except sort methods, Mongo imports to be used, alternatively .sort via JAVA or Monngo. 
+    - Search via search term(number , first name, surname), otherwise ResourceNotFound Exception to be thrown
+
+- # Additional Files & code commented & committed
+- # What i would've completed should there any requests be made : 
+    Security protocols; WebConfig, SexcurityXML, java security config, Spring Security, Further Error Handling
+    , Bug fixes, Further tests
+
 # Structure
 
 The project has a simple Java project structure with the following packages (in **src/main/java**)
@@ -27,3 +47,4 @@ This is a standard SpringBoot application, you can run it by executing the follo
 ```
 ./mvnw spring-boot:run
 ```
+
