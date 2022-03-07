@@ -61,7 +61,7 @@ public class ContactController {
 
 	// Create
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ResponseEntity<?> add(@RequestBody Contact contact) throws Exception {
+	public ResponseEntity<?> add(@RequestBody Contact contact) throws Exception{
 
 		logger.info("Adding to contacts list");
 		try {
@@ -109,13 +109,13 @@ public class ContactController {
 
 		List<Contact> result = new ArrayList<Contact>();
 		return new ResponseEntity<>(result, HttpStatus.OK);
-
+		
 	}
 
 	// Search
 	@ApiOperation(value = "Search a Contact with a phone number", response = Contact.class)
 	@RequestMapping(value = "/Search/{phonenumber}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<Contact> showContact(@PathVariable String phoneNum, Model model) throws Exception {
+	public ResponseEntity<Contact> showContact(@PathVariable String phoneNum, Model model) throws Exception{
 		Contact contact = (Contact) contactService.search(phoneNum).orElseThrow();
 		return ResponseEntity.ok().body(contact);
 	}
