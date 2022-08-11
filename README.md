@@ -15,7 +15,7 @@
 
 - # Additional Files & code commented & committed
 - # What i would've completed should there be any requests made : 
-    Security protocols; WebConfig, SexcurityXML, java security config, Spring Security, Further Error Handling
+    Security protocols; WebConfig, SecurityXML, java security config, Spring Security, Further Error Handling
     , Bug fixes, Further tests
 
 # Structure
